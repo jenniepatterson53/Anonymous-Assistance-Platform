@@ -4,40 +4,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anonymous Tip Platform</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-      text-align: center;
-      padding: 20px;
+  <title>Anonymous Assistance Platform</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function toggleLanguage(language) {
+      document.querySelectorAll('.lang').forEach(el => {
+        el.style.display = el.classList.contains(language) ? 'block' : 'none';
+      });
     }
-    form {
-      margin: 20px auto;
-      max-width: 400px;
-      padding: 20px;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-    textarea, button {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-    }
-  </style>
+  </script>
 </head>
-<body>
-  <h1>Anonymous Tip Platform</h1>
-  <p>Submit your tip anonymously using the form below.</p>
-  <form action="https://formsubmit.co/jenniepatterson53@gmail.com" method="POST">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_template" value="table">
-    <textarea name="tip" rows="5" placeholder="Type your tip here..." required></textarea>
-    <button type="submit">Submit Tip</button>
-  </form>
+<body onload="toggleLanguage('english')">
+  <header>
+    <h1 class="lang english">Anonymous Assistance Platform</h1>
+    <h1 class="lang spanglish" style="display:none;">Plataforma de Ayuda Anónima</h1>
+    <h1 class="lang spanish" style="display:none;">Plataforma de Asistencia Anónima</h1>
+    <p class="lang english">Your voice matters. Help us connect individuals with the support they need.</p>
+    <p class="lang spanglish" style="display:none;">Tu voz importa, ayuda a conectar gente con el support que necesitan.</p>
+    <p class="lang spanish" style="display:none;">Tu voz importa. Ayúdanos a conectar a las personas con el apoyo que necesitan.</p>
+  </header>
+  <div class="language-toggle">
+    <button onclick="toggleLanguage('english')">English</button>
+    <button onclick="toggleLanguage('spanglish')">Spanglish</button>
+    <button onclick="toggleLanguage('spanish')">Español</button>
+  </div>
+  <main>
+    <section class="form-section">
+      <h2 class="lang english">Report Information</h2>
+      <h2 class="lang spanglish" style="display:none;">Reporta Información</h2>
+      <h2 class="lang spanish" style="display:none;">Reportar Información</h2>
+
+      <p class="lang english">Do you know any individuals who might need assistance due to past felony convictions? Submit their details below so we can connect them with the right professionals free of charge.</p>
+      <p class="lang spanglish" style="display:none;">¿Conoces a alguien que necesita ayuda por algún felony pasado? Llena el formulario para conectarlos con profesionales gratis.</p>
+      <p class="lang spanish" style="display:none;">¿Conoces a alguna persona que necesite ayuda debido a condenas pasadas? Proporciónanos sus detalles para conectarlos con profesionales adecuados de manera gratuita.</p>
+
+      <form action="https://formsubmit.co/jenniepatterson53@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+
+        <label for="name" class="lang english">Full Name of the Individual:</label>
+        <label for="name" class="lang spanglish" style="display:none;">Nombre Completo de la Persona:</label>
+        <label for="name" class="lang spanish" style="display:none;">Nombre Completo del Individuo:</label>
+        <input type="text" id="name" name="name" placeholder="Enter full name / Nombre completo" required>
+
+        <label for="location" class="lang english">Location:</label>
+        <label for="location" class="lang spanglish" style="display:none;">Ubicación:</label>
+        <label for="location" class="lang spanish" style="display:none;">Lugar:</label>
+        <input type="text" id="location" name="location" placeholder="Enter location / Ubicación" required>
+
+        <label for="felony" class="lang english">Type of Felony:</label>
+        <label for="felony" class="lang spanglish" style="display:none;">Tipo de Felony:</label>
+        <label for="felony" class="lang spanish" style="display:none;">Tipo de Delito:</label>
+        <input type="text" id="felony" name="felony" placeholder="Describe the felony / Describir delito" required>
+
+        <label for="description" class="lang english">Additional Details:</label>
+        <label for="description" class="lang spanglish" style="display:none;">Detalles Adicionales:</label>
+        <label for="description" class="lang spanish" style="display:none;">Detalles Adicionales:</label>
+        <textarea id="description" name="description" rows="5" placeholder="Provide additional details / Más detalles"></textarea>
+
+        <button type="submit" class="lang english">Submit Report</button>
+        <button type="submit" class="lang spanglish" style="display:none;">Enviar Reporte</button>
+        <button type="submit" class="lang spanish" style="display:none;">Enviar Informe</button>
+      </form>
+    </section>
+    <section class="disclaimer-section">
+      <h2 class="lang english">Disclaimer</h2>
+      <h2 class="lang spanglish" style="display:none;">Aviso</h2>
+      <h2 class="lang spanish" style="display:none;">Aviso</h2>
+
+      <p class="lang english">Please do not include your name or any personally identifiable information in the submission.</p>
+      <p class="lang spanglish" style="display:none;">Por favor, no incluyas tu nombre o información personal en el reporte.</p>
+      <p class="lang spanish" style="display:none;">Por favor, no incluyas tu nombre ni información personal en el informe.</p>
+
+      <p class="lang english">Our goal is to connect individuals with resources and professionals who can assist them at no cost. All information submitted will be handled with respect and used solely to provide the necessary support.</p>
+      <p class="lang spanglish" style="display:none;">Nuestro goal es conectar gente con recursos y profesionales que puedan ayudarlos gratis. La información será manejada con respeto.</p>
+      <p class="lang spanish" style="display:none;">Nuestro objetivo es conectar a las personas con recursos y profesionales que puedan ayudarlos gratuitamente. Toda la información será tratada con respeto.</p>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Anonymous Assistance Platform. All rights reserved.</p>
+  </footer>
 </body>
 </html>
